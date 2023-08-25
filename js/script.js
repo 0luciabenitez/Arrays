@@ -29,6 +29,10 @@ function isString(element) {
   return typeof element === "string" && element !== "";
 }
 
+function compareString(a, b) {
+  return a.localeCompare(b);
+}
+
   // Función que recibe por parámetro un array y muestra sus elementos en pantalla
 function showList(array) {
     const container = document.getElementById("list");
@@ -48,7 +52,7 @@ function showList(array) {
   const filteredArray = strangeArray.filter(isString);
 
   // Ordenamos el array alfabéticamente
-  filteredArray.sort();
+  filteredArray.sort(compareString);
 
   // Mostramos el array filtrado
   showList(filteredArray);
