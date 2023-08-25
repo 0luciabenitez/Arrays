@@ -24,6 +24,11 @@ const strangeArray = [
     "JavaScript",
   ];
 
+  // Función que comprueba si un elemento es string
+function isString(element) {
+  return typeof element === "string" && element !== "";
+}
+
   // Función que recibe por parámetro un array y muestra sus elementos en pantalla
 function showList(array) {
     const container = document.getElementById("list");
@@ -39,4 +44,12 @@ function showList(array) {
   document.addEventListener("DOMContentLoaded", (e) => {
     // Escribe tu solución aquí
     // Sugerencia de cómo mostrar el array => showList(strangeArray);
+    // Filtramos los elementos de tipo String
+  const filteredArray = strangeArray.filter(isString);
+
+  // Ordenamos el array alfabéticamente
+  filteredArray.sort();
+
+  // Mostramos el array filtrado
+  showList(filteredArray);
 });
